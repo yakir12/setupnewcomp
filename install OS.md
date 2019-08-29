@@ -1,8 +1,9 @@
 # setup new comp
-netinst debian stable
-system tools and printer server
-no swap
+1. netinst debian stable
+2. only system tools (and printer and/or ssh server)
 
 # copy files
+```
 sudo mount /dev/sda1 /mnt
-cp -pur /mnt/* /home/yakir/
+cp -pur /mnt/* ~/
+```

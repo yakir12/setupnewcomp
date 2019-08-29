@@ -5,7 +5,7 @@ sudo apt-get -y install stow
 
 ## dot files
 rm .bashrc .profile
-cd dotfiles
+cd ~/dotfiles
 stow $(find . -maxdepth 1  -not -name "julia" -type d  -printf '%P\n')
 cd
 
@@ -29,7 +29,7 @@ sudo apt-get -y install libfuse-dev fuse pkg-config
 # to
 # udevadm test --action add  $(udevadm info -q path -n /dev/fuse)
 
-# ## borg ← does not work due to errors installing fuse...
+# ## borg
 sudo apt-get -y install python3 python3-dev python3-pip python-virtualenv libssl-dev openssl libacl1-dev libacl1 build-essential
 sudo apt-get -y install borgbackup 
 
@@ -61,6 +61,7 @@ julia -e 'using Pkg; Pkg"up"; exit()'
 cd dotfiles
 ### now that there is a julia folder we can add our configurations
 stow julia
+cd
 
 ## julia 1.3
 wget -c https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.0-rc1-linux-x86_64.tar.gz -O - | tar -xz -C /home/yakir/bin/

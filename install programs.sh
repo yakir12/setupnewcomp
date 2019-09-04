@@ -10,10 +10,10 @@ stow $(find . -maxdepth 1  -not -name "julia" -type d  -printf '%P\n')
 cd
 
 ## base system
-sudo apt-get -y install xorg i3 git neovim ranger htop bash-completion ncdu cmake gparted screen stow xarchiver csh xorg-dev dunst libnotify-bin
+sudo apt-get -y install xorg i3 git neovim ranger htop bash-completion ncdu cmake gparted screen stow xarchiver csh xorg-dev dunst libnotify-bin curl
 
 ## tools
-sudo apt-get -y install i3blocks inkscape gimp texlive-full zathura parallel pdftk imagemagick ffmpeg dcraw beets feh mpv r-base hdf5-tools bibtex2html taskwarrior mutt keepassx firefox-esr blueproximity tar transmission simplescreenrecorder jabref arandr npm awscli rsync
+sudo apt-get -y install i3blocks inkscape gimp texlive-full zathura parallel pdftk imagemagick ffmpeg dcraw beets feh mpv r-base hdf5-tools bibtex2html taskwarrior mutt keepassx firefox-esr blueproximity tar transmission simplescreenrecorder jabref arandr npm awscli rsync pdf2svg
 
 ## diverse
 sudo apt-get -y install mesa-utils libxrandr-dev libxinerama-dev libxcursor-dev libglfw3 ffmpegthumbnailer
@@ -45,6 +45,11 @@ sudo npm install -g reveal-md --unsafe-perm=true --allow-root
 ## dropbox
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 sudo ln -s ~/.dropbox-dist/dropboxd /usr/local/bin/dropbox
+
+## signal
+curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
 
 ## nvim
 nvim +PlugInstall +PlugUpdate +qall

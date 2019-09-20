@@ -4,7 +4,8 @@
 sudo apt-get -y install stow
 
 ## dot files
-rm .bashrc .profile
+mv .bashrc .bashrc.old
+mv .profile .profile.old
 cd ~/dotfiles
 stow $(find . -maxdepth 1  -not -name "julia" -type d  -printf '%P\n')
 cd
@@ -58,11 +59,12 @@ nvim +PlugInstall +PlugUpdate +qall
 mkdir ~/.Trash
 
 ## julia 1.2
+mkdir bin
 wget -c https://julialang-s3.julialang.org/bin/linux/x64/1.2/julia-1.2.0-linux-x86_64.tar.gz -O - | tar -xz -C /home/yakir/bin/
 sudo ln -s /home/yakir/bin/julia-1.2.0/bin/julia /usr/local/bin/julia
 
 ### spawn julia, update it, thus creating the .julia folder
-julia -e 'using Pkg; Pkg"up"; exit()'
+julia -e 'using Pkg; pkg"up"; exit()'
 cd dotfiles
 ### now that there is a julia folder we can add our configurations
 stow julia

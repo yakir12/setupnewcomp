@@ -6,6 +6,10 @@ sudo apt-get -y install stow
 ## dot files
 mv .bashrc .bashrc.old
 mv .profile .profile.old
+ranger --copy-config=all
+rm ~/.config/ranger/rc.conf
+rm ~/.config/ranger/scope.sh
+mkdir ~/.config/nvim
 cd ~/dotfiles
 stow $(find . -maxdepth 1  -not -name "julia" -type d  -printf '%P\n')
 cd

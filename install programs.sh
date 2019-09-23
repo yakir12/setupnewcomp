@@ -11,7 +11,7 @@ rm ~/.config/ranger/rc.conf
 rm ~/.config/ranger/scope.sh
 mkdir ~/.config/nvim
 cd ~/dotfiles
-stow $(find . -maxdepth 1  -not -name "julia" -type d  -printf '%P\n')
+stow $(find . -maxdepth 1 -not -name "julia" -not -name ".git" -type d  -printf '%P\n')
 cd
 
 ## base system

@@ -76,7 +76,7 @@ stow julia
 cd
 
 ## julia 1.3
-wget -c https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.0-rc1-linux-x86_64.tar.gz -O - | tar -xz -C /home/yakir/bin/
+wget -c https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.0-rc2-linux-x86_64.tar.gz -O - | tar -xz -C /home/yakir/bin/
 sudo ln -s /home/yakir/bin/julia-1.3.0-rc1/bin/julia /usr/local/bin/julia1.3
 
 ## firefox

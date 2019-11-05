@@ -18,10 +18,10 @@ cd
 sudo apt-get -y install xorg i3 git neovim ranger htop bash-completion ncdu cmake gparted screen stow xarchiver csh xorg-dev dunst libnotify-bin curl
 
 ## tools
-sudo apt-get -y install i3blocks inkscape gimp texlive-full zathura parallel pdftk imagemagick ffmpeg dcraw beets feh mpv r-base hdf5-tools bibtex2html taskwarrior mutt keepassx firefox-esr blueproximity tar transmission simplescreenrecorder jabref arandr npm awscli rsync pdf2svg
+sudo apt-get -y install i3blocks inkscape gimp texlive-full zathura parallel pdftk imagemagick ffmpeg dcraw beets feh mpv r-base hdf5-tools bibtex2html taskwarrior mutt keepassx firefox-esr blueproximity tar transmission simplescreenrecorder jabref arandr npm awscli rsync pdf2svg pandoc-citeproc
 
 ## diverse
-sudo apt-get -y install mesa-utils libxrandr-dev libxinerama-dev libxcursor-dev libglfw3 ffmpegthumbnailer
+sudo apt-get -y install mesa-utils libxrandr-dev libxinerama-dev libxcursor-dev libglfw3 ffmpegthumbnailer unclutter
 
 ## nvidia driver
 sudo apt-get -y install nvidia-driver

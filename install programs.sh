@@ -63,10 +63,9 @@ nvim +PlugInstall +PlugUpdate +qall
 ## ranger
 mkdir ~/.Trash
 
-## julia 1.2
-mkdir bin
-wget -c https://julialang-s3.julialang.org/bin/linux/x64/1.2/julia-1.2.0-linux-x86_64.tar.gz -O - | tar -xz -C /home/yakir/bin/
-sudo ln -s /home/yakir/bin/julia-1.2.0/bin/julia /usr/local/bin/julia
+## julia
+git clone git@github.com:JuliaCI/install-julia.git
+./install-julia/install-julia.sh 1.2
 
 ### spawn julia, update it, thus creating the .julia folder
 julia -e 'using Pkg; pkg"up"; exit()'
@@ -74,10 +73,6 @@ cd dotfiles
 ### now that there is a julia folder we can add our configurations
 stow julia
 cd
-
-## julia 1.3
-wget -c https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.0-rc2-linux-x86_64.tar.gz -O - | tar -xz -C /home/yakir/bin/
-sudo ln -s /home/yakir/bin/julia-1.3.0-rc1/bin/julia /usr/local/bin/julia1.3
 
 ## firefox
 ### this kind of works, but I still need to go to settings in GUI firefox and change things.
